@@ -1,0 +1,14 @@
+{% if bartxt == '' %}
+
+{% endif %}
+svg viewBox='0 0 {{size+barlen+4}} {{size+3}}' width='{{size+barlen+4}}px' height='{{size+3}}px' xmlns='http://www.w3.org/2000/svg':
+    foreignObject x='0' y='0' width='{{size+barlen+4}}' height='{{size+3}}':
+        html xmlns='http://www.w3.org/1999/xhtml':
+            style:
+                .img { border-radius: {{radius}}px; background-image: url('{{b64}}'); background-size: cover; position: absolute; top: {{border+2.5}}px; left: {{border}}px; width: {{size-2*border}}px; height: {{size-2*border}}px; box-shadow: 0px 0px {{border}}px rgba(0,0,0,{{shadow}}); } .bar { border-radius: 0 15px 15px 0; text-shadow: 0.8px 0.8px 1px rgba(0, 0, 0, 0.5); font-weight: 1000; display: flex; align-items: center; overflow: hidden; font-family: "HarmonyOS","Helvetica Neue","Luxi Sans","DejaVu Sans","Hiragino Sans GB","Microsoft Yahei",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Segoe UI Symbol","Android Emoji","EmojiSymbols" !important; position: absolute; top: {{border+size*0.1}}px; left: {{size/2}}px; height: {{(size-2*border)*1}}px; background: linear-gradient(rgb{{color1[0],color1[1], color1[2]}}, rgb{{color2[0],color2[1], color2[2]}}); box-shadow: 0px 0px {{border}}px rgba(0,0,0,{{shadow}}); white-space: nowrap; padding-left: {{size/2}}px; font-size: {{fontsize+1}}px; color: rgb{{fontcolor[0], fontcolor[1], fontcolor[2]}}; } @keyframes move { from { width: 0px;} to { width: {{barlen-border+5}}px; } } .bar { animation-duration: {{anime}}s; animation-name: move; animation-fill-mode: both; } span { margin-bottom: 1.5px; } 
+            {% if bartxt != '' %}
+            div.bar:
+                span:
+                    {{bartxt}}
+            {% endif %}
+            div.img:
